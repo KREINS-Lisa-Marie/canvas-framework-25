@@ -1,4 +1,4 @@
-
+import {settings} from "../settings";
 
 export class Hsl {
     private _hue:number;
@@ -10,7 +10,7 @@ export class Hsl {
 
         this._hue = hue>360? 360:hue;
         this._saturation = saturation;
-        this.lightness = lightness;
+        this._lightness = settings.defaultColorValue;
     }
 
     get hue(): number {
@@ -18,8 +18,10 @@ export class Hsl {
     }
 
     set hue(value: number) {
-        if (value>=0 && value<=360){
+        if (value >= 0 && value <= 360) {
             this._hue = value;
+        } else {
+            this._hue = settings.defaultColorValue;
         }
     }
 
@@ -28,8 +30,10 @@ export class Hsl {
     }
 
     set saturation(value: number) {
-        if (value>=0 && value<=100){
+        if (value >= 0 && value <= 100) {
             this._saturation = value;
+        } else {
+            this._saturation = settings.defaultColorValue;
         }
     }
 

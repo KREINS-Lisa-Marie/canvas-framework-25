@@ -11,7 +11,7 @@ export abstract class Shape {       // class qu'on peut ≠ utiliser = une étap
     corners:iTriangleCorners;
 
 
-    constructor(ctx: CanvasRenderingContext2D, color: Rgba | Hsl, position: iPosition, corners: iTriangleCorners) {
+    protected constructor(ctx: CanvasRenderingContext2D, color: Rgba | Hsl, position: iPosition, corners: iTriangleCorners) {
         this.ctx = ctx;
         this.color = color;
         this.position = position;
